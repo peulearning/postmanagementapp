@@ -14,6 +14,8 @@ public class PostController {
     @Autowired
     private PostService postService;
 
+
+
     @GetMapping
     public String listPosts(Model model) {
         model.addAttribute("posts", postService.getAllPosts());
