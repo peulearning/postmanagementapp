@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Post</title>
+</head>
+<body th:fragment="content">
+    <h2>Post Details</h2>
+    <h3 th:text="${post.title}"></h3>
+    <p th:text="${post.content}"></p>
+    <a th:href="@{/posts}">Back to list</a>
+</body>
+</html>

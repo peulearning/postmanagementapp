@@ -30,12 +30,17 @@ public class Post {
 
 
    // Constructor
-   public Post(Long id, String title, String content, LocalDateTime createdAt, User user) {
-    this.id = id;
-    this.title = title;
-    this.content = content;
-    this.createdAt = createdAt;
-    this.user = user;
+   public Post(){
+
+   }
+   
+    // Construtor com parâmetros
+    public Post(Long id, String title, String content, LocalDateTime createdAt, User user) {
+      this.id = id;
+      this.title = title;
+      this.content = content;
+      this.createdAt = createdAt;
+      this.user = user;
   }
 
     // Getters and Setters
