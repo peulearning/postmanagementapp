@@ -2,16 +2,108 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Post List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Posts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .create-post-button {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        .create-post-button:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .post-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .actions a {
+            text-decoration: none;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .actions .view {
+            background-color: #28a745; /* Green for View */
+        }
+        .actions .view:hover {
+            background-color: #218838;
+        }
+        .actions .edit {
+            background-color: #ffc107; /* Yellow for Edit */
+            color: #333;
+        }
+        .actions .edit:hover {
+            background-color: #e0a800;
+        }
+        .actions .delete {
+            background-color: #dc3545; /* Red for Delete */
+        }
+        .actions .delete:hover {
+            background-color: #c82333;
+        }
+    </style>
 </head>
-<body th:fragment="content">
-    <h2>Post List</h2>
-    <ul>
-        <li th:each="post : ${posts}">
-            <a th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.title}"></a>
-            <a th:href="@{/posts/{id}/edit(id=${post.id})}">Edit</a>
-            <a th:href="@{/posts/{id}/delete(id=${post.id})}">Delete</a>
-        </li>
-    </ul>
+<body>
+    <div class="container">
+        <h2>Lista de Posts</h2>
+        <a class="create-post-button" th:href="@{/posts/create}">Criar Novo Post</a>
+        <ul>
+            <li th:each="post : ${posts}">
+                <span class="post-title" th:text="${post.title}"></span>
+                <div class="actions">
+                    <a class="view" th:href="@{/posts/{id}(id=${post.id})}" th:text="'View'">View</a>
+                    <a class="edit" th:href="@{/posts/{id}/edit(id=${post.id})}">Edit</a>
+                    <a class="delete" th:href="@{/posts/{id}/delete(id=${post.id})}">Delete</a>
+                </div>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>

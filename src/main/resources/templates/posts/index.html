@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Não Encontrada - Erro 404</title>
+    <title>Home</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            background-color: #f4f4f4;
             color: #333;
             display: flex;
             flex-direction: column;
@@ -17,53 +16,21 @@
             margin: 0;
         }
         h1 {
-            font-size: 6em;
-            color: #dc3545;
-            margin: 0;
-        }
-        h2 {
-            font-size: 2em;
-            margin: 0.5em 0;
-        }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
+            color: #007bff;
         }
         a {
             text-decoration: none;
-            color: white;
-            background-color: #007bff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.1em;
+            color: #007bff;
+            font-size: 1.2em;
+            margin-top: 20px;
         }
         a:hover {
-            background-color: #0056b3;
-        }
-        .instructions {
-            margin-top: 20px;
-            max-width: 600px;
-            text-align: center;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-
-    <h1>404</h1>
-    <h2>Página Não Encontrada</h2>
-    <p>Oops! Parece que a página que você está procurando não existe.</p>
-
-    <a href="/">Voltar para a Página Inicial</a>
-
-    <div class="instructions">
-        <p>Aqui estão algumas instruções que podem ajudar:</p>
-        <ul>
-            <li>Verifique se a URL foi digitada corretamente.</li>
-            <li>Se você clicou em um link e chegou aqui, o link pode estar quebrado.</li>
-            <li>Volte para a <a href="/">página inicial</a> e tente encontrar o conteúdo desejado a partir do menu.</li>
-            <li>Se continuar com problemas, entre em contato com o suporte técnico.</li>
-        </ul>
-    </div>
-
+    <h1>Bem-vindo ao Post Management App</h1>
+    <a href="/posts">Ver Posts</a>
 </body>
 </html>

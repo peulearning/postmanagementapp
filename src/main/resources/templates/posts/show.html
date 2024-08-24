@@ -2,12 +2,58 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Show Post</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Post</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            max-width: 800px;
+        }
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: color 0.3s;
+        }
+        .back-link:hover {
+            color: #0056b3;
+        }
+    </style>
 </head>
-<body th:fragment="content">
-    <h2>Post Details</h2>
-    <h3 th:text="${post.title}"></h3>
-    <p th:text="${post.content}"></p>
-    <a th:href="@{/posts}">Back to list</a>
+<body>
+    <div class="container">
+        <h2>Detalhes do Post</h2>
+        <h3 th:text="${post.title}"></h3>
+        <p th:text="${post.content}"></p>
+        <a class="back-link" th:href="@{/posts}">Voltar para a lista</a>
+    </div>
 </body>
 </html>
